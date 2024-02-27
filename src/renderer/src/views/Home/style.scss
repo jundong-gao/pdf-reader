@@ -1,0 +1,23 @@
+$bgc: rgba(#1b1b1f, .5);
+$toolbar-height: 60px;
+
+.page{height: 100%;
+    .tool-bar{height: $toolbar-height; background-color: $bgc; box-shadow: 0 4px 4px rgba(#000, 1); padding: 0 20px; box-sizing: border-box; color: darken(#fff, 10%);
+        &-title{font-weight: bold;}
+    }
+}
+
+
+.main{height: calc(100vh - $toolbar-height);
+    &-side{width: 300px; height: 100%; background-color: $bgc; padding: 10px; box-sizing: border-box; overflow: auto;
+        --el-fill-color-light: transparnet;
+        :deep(.el-tree){background-color: transparent; height: 100%; color: darken(#fff, 40%);}
+        :deep(.el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content){background-color: lighten(#000, 30%); color: darken(#fff, 0); font-weight: bold;}
+        :deep(.el-tree-node__content:hover){background-color: lighten($bgc, 70%);}
+        :deep(.el-tree-node__content){border-radius: 20px;}
+    }
+    &-content{padding: 20px; box-sizing: border-box; overflow: auto;
+        .pdf-canvas-item{margin-bottom: 20px; display: block;}
+    }
+}
+
